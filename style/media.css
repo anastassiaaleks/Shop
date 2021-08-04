@@ -1,0 +1,11 @@
+@media (max-width: 1256px){
+    .imgDiv{
+        height: 220px;
+        width: 220px;
+        line-height: 220px;
+    }
+    .imgDiv>img{
+        max-height: 220px;
+        max-width: 220px;
+    }
+}

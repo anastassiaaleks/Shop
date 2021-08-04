@@ -65,16 +65,16 @@ class Cart{
             product.innerHTML=`
                 <img src="${elem.image}" alt="">
                 <div class='infoCart'>
-                    <h1>${elem.title}</h1>
+                    <h1 class="productNameCart">${elem.title}</h1>
                 </div>
                 <p>${elem.price}</p>
                 <div class="quantityProduct">
                     <button class="minusCount">-</button>
-                    <div class="">${elem.count}</div>
+                    <div class="countCurrent">${elem.count}</div>
                     <button class="plusCount">+</button>
                 </div>
                 <p>${elem.count*elem.price}</p>
-                <button class="delCart">del</button>
+                <button class="delCart">x</button>
             `
             product.querySelector('.delCart').addEventListener('click', function(){
                 that.remove(elem.id)

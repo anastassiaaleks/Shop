@@ -37,8 +37,17 @@ class Catalog{
                 </div>
                 <button class="addCart">Add</button>
             `
-            product.querySelector('.addCart').addEventListener('click', function(){
+            let btnAdd=product.querySelector('.addCart')
+            btnAdd.addEventListener('click', function(){
                 that.addToCart(elem.id)
+                btnAdd.innerHTML='Cart'
+                btnAdd.classList.remove('addCart')
+                btnAdd.classList.add('added')
+                let btnAdded=product.querySelector('.added')
+                btnAdded.addEventListener('click', ()=>{
+                    cart.render()
+                    window.location.hash='#cart'
+                })
             })
             products.appendChild(product)
             $('.main').appendChild(products)
@@ -51,8 +60,6 @@ class Catalog{
                 let newArr = this.dataCart.filter(element => {
                     return element.id==id;
                 })
-                // console.log(newArr);
-
                 if(newArr.length==0){
                     elem.count=1
                     this.dataCart.push(elem)
